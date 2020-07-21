@@ -23,6 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $phone = '+6282341809508';
+        $body = 
+'Hai kak gus mang, saya mau kenalan
+        
+nama saya gus dek
+        
+Aiya';
+        
         return view('home');
+        return redirect('https://web.whatsapp.com/send?phone='.$phone.'&text='.rawurlencode($body));
+        // return 'some text';
     }
 }
