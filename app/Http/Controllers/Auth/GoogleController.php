@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Support\Facades\Hash;
 use Socialite;
 
+use App\Role;
 use App\User;
 
 class GoogleController extends Controller
@@ -47,7 +48,9 @@ class GoogleController extends Controller
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'password' => Hash::make('123456dummy')
-                ]);
+                ])
+                    ->roles()
+                    ->attach(Role::where('name', 'user')->first());
     
                 Auth::login($newUser);
      
