@@ -64,7 +64,7 @@ class HomeController extends Controller
         }
 
         if (Auth::user()->phone != $request->phone) {
-            User::updateName($request->phone);
+            User::updatePhone($request->phone);
         }
 
         $order;
