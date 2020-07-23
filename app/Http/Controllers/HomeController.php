@@ -21,7 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+    public function index(){
+        return view('index');
+    }
+
+    public function gg()
     {
         $phone = '+6282341809508';
         $body = 
