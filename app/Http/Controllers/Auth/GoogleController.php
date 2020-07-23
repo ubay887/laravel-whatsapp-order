@@ -52,7 +52,7 @@ class GoogleController extends Controller
                     ->roles()
                     ->attach(Role::where('name', 'user')->first());
     
-                Auth::login($newUser);
+                // Auth::login($newUser);
      
                 return redirect('/home');
             }
