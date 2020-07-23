@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
+Route::get('logout-test', 'HomeController@home');
 Route::get('home', 'HomeController@index')->name('home');
 Route::post('order', 'HomeController@order')->name('order');
 Route::post('payment', 'HomeController@payment')->name('payment');

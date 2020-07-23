@@ -111,4 +111,9 @@ class HomeController extends Controller
         
         return redirect('https://web.whatsapp.com/send?phone='.$phone.'&text='.rawurlencode($order.$pesan.$totalteks.$total.'*'.$id));
     }
+
+    public function home()
+    {
+        return view('home');
+    }
 }
