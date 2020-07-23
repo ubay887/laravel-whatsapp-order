@@ -9,8 +9,8 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>HIMA-TI STIKI Indonesia</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/ico/favicon.ico">
+    <title>eco BIKe coffee</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo/logo.jpg') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -55,7 +55,7 @@
             <div class="content-header row justify-content-center">
               <div class="col-md-10 content-header-left">
                 <h2 class="content-header-title">
-                  <img src="/images/logo/logo-himati.png" style="height: 60px" alt="HIMA-TI STIKI Indonesia">
+                  <img src="{{ asset('images/logo/logo.jpg') }}" style="height: 60px" alt="eco BIKe coffee">
                   {{-- <div class="float-right">
                     <div class="breadcrumb-wrapper col-12 text-center d-none d-sm-block my-1">
                       <ol class="breadcrumb align-items-center">

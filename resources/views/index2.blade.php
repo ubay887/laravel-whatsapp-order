@@ -55,7 +55,7 @@
             <div class="content-header row justify-content-center">
               <div class="col-md-10 content-header-left">
                 <h2 class="content-header-title">
-                  <img src="/images/logo/logo-himati.png" style="height: 60px" alt="HIMA-TI STIKI Indonesia">
+                  <img src="{{ asset('images/logo/logo.jpg') }}" style="height: 60px" alt="HIMA-TI STIKI Indonesia">
                   {{-- <div class="float-right">
                     <div class="breadcrumb-wrapper col-12 text-center d-none d-sm-block my-1">
                       <ol class="breadcrumb align-items-center">
