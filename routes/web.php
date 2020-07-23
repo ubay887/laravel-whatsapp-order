@@ -17,11 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/index', 'index');
-Route::view('/index2', 'index2');
-
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
+Route::post('order', 'HomeController@order')->name('order');
+Route::post('payment', 'HomeController@payment')->name('payment');
 Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');

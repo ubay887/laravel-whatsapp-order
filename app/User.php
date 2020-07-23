@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'google_id'
+        'name', 'email', 'password', 'phone', 'google_id'
     ];
 
     /**
@@ -71,5 +72,15 @@ class User extends Authenticatable
     public function hasRole($role)
     {
         return null !== $this->roles()->where('name', $role)->first();
+    }
+
+    static function updateName($name)
+    {
+        User::whereId(Auth::user()->id)->update(['name' => $name]);
+    }
+
+    static function updatePhone($phone)
+    {
+        User::whereId(Auth::user()->id)->update(['phone' => $phone]);
     }
 }
