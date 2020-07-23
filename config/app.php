@@ -167,7 +167,6 @@ return [
          */
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        NotificationChannels\ChatAPI\ChatAPIServiceProvider::class,
 
         /*
          * Application Service Providers...

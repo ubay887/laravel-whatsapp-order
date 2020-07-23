@@ -72,40 +72,11 @@
             <div class="content-body">
                 <!-- Input Validation start -->
                 <section class="input-validation">
-                    <div class="row justify-content-center mb-3">
-                        <div class="col-xl-6 col-lg-8 col-12">
-                            <div id="carousel-interval" class="carousel slide" data-ride="carousel" data-interval="5000">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-interval" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-interval" data-slide-to="1"></li>
-                                    <li data-target="#carousel-interval" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img class="img-fluid" src="/images/slider/01.jpg" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="img-fluid" src="/images/slider/03.jpg" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="img-fluid" src="/images/slider/02.jpg" alt="Third slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carousel-interval" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-interval" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-
-                            {{-- <input type="text" class="form-control mt-2" id="produk" placeholder="Pencarian Produk"> --}}
-                            
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8 col-12">                            
                             <div class="card mt-2">
                                 <div class="card-header">
-									<h4 class="card-title">Terlaris</h4>
+									<h4 class="card-title">Order Item(s)</h4>
 								</div>
 								<hr>
 								<div class="card-content">
@@ -124,8 +95,13 @@
                                                     <h4 class="mb-0 font-weight-bold">Burger Meet Moza</h4>
                                                     <p class="mb-0">Burger Special with</p>
                                                     <p><del class="text-danger">Rp. 50.000</del> Rp. 5.000</p>
-                                                    <div class="float-right">
-                                                        <button class="btn btn-success">Beli</button>
+                                                    <div class="float-right justfy-content-end">
+                                                        <div class="row">
+                                                            <div class="col-9"></div>
+                                                            <div class="col-3">
+                                                                <input type="text" value="1" class="form-control text-center">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,17 +120,62 @@
                                                     <p class="mb-0">Burger Special with</p>
                                                     <p><del class="text-danger">Rp. 50.000</del> Rp. 5.000</p>
                                                     <div class="float-right">
-                                                        <button class="btn btn-success">Beli</button>
+                                                        <div class="row">
+                                                            <div class="col-9"></div>
+                                                            <div class="col-3">
+                                                                <input type="text" value="3" class="form-control text-center">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <hr>
 										</div>
 									</div>
-									<div class="card-footer text-center">
-										<a href="#" id="loadMore">Load More</a>
+								</div>
+                            </div>
+                            <div class="card mt-2">
+                                <div class="card-header">
+									<h4 class="card-title">Data Pemesan</h4>
+								</div>
+								<hr>
+								<div class="card-content">
+									<div class="card-body">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label>Nama</label>
+                                                <input type="text" name="" id="" value="Ida Bagus Kadek Darma Wiryatama" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Pesan Untuk Penjual</label>
+                                                <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                                            </div>
+                                        </form>
 									</div>
 								</div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+									<h4 class="card-title">Order Detail</h4>
+								</div>
+								<hr>
+								<div class="card-content mb-2">
+									<div class="card-body">
+                                        <div class="float-left">
+                                            Total Harga
+                                        </div>
+                                        <div class="float-right">
+                                            Rp. 100.000
+                                        </div>
+									</div>
+								</div>
+                            </div>
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-success w-100 text-center">Pesan</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -164,19 +185,6 @@
         </div>
     </div>
     <!-- END: Content-->
-
-    <footer class="footer footer-static footer-light ml-0 py-1">
-        <div class="container">
-            <div class="float-left">
-                <p class="m-0">Total Belanja:</p>
-                <p class="m-0 font-weight-bold text-danger">Rp.100.000</p>
-            </div>
-            <div class="float-right">
-                <button type="button" class="btn btn-success">Lanjut</button>
-            </div>
-        </div>
-        {{-- <p>Footer</p> --}}
-    </footer>
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
