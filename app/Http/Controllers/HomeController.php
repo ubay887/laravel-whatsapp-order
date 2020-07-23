@@ -109,7 +109,7 @@ class HomeController extends Controller
 
         $phone = '+6282341809508';
         
-        return redirect('https://web.whatsapp.com/send?phone='.$phone.'&text='.rawurlencode($order.$pesan.$totalteks.$total.'*'.$id));
+        return redirect('https://wa.me/'.$phone.'?text='.rawurlencode($order.$pesan.$totalteks.$total.'*'.$id));
     }
 
     public function home()
