@@ -24,7 +24,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Tortizza Chicken Beef',
-            'img' => '',
+            'img' => 'images\foods\tortizza-chicken-beef.jpeg',
             'old_price' => '50000',
             'new_price' => '50000'
         ]);
@@ -48,7 +48,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Garlic Bread with Lamb Sausage',
-            'img' => '',
+            'img' => 'images\foods\garlic-bread-with-lamb-sausage.jpeg',
             'old_price' => '50000',
             'new_price' => '50000'
         ]);
@@ -56,7 +56,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Mozzaroni',
-            'img' => '',
+            'img' => 'images\foods\mozzaroni.jpeg',
             'old_price' => '45000',
             'new_price' => '45000'
         ]);
@@ -64,7 +64,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Spaghetti Bolognese',
-            'img' => '',
+            'img' => 'images\foods\spaghetti-bolognese.jpeg',
             'old_price' => '53000',
             'new_price' => '53000'
         ]);
@@ -72,7 +72,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Spaghetti Aglio Olio',
-            'img' => '',
+            'img' => 'images\foods\spaghetti-aglio-olio.jpeg',
             'old_price' => '53000',
             'new_price' => '53000'
         ]);
@@ -80,7 +80,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Lemon Butter Chicken',
-            'img' => '',
+            'img' => 'images\foods\lemon-butter-chicken.jpeg',
             'old_price' => '65000',
             'new_price' => '65000'
         ]);
@@ -88,7 +88,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Chicken Teriyaki Rice Bowl',
-            'img' => '',
+            'img' => 'images\foods\chicken-teriyaki-rice-bowl.jpeg',
             'old_price' => '65000',
             'new_price' => '65000'
         ]);
@@ -96,7 +96,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Chicken Sambal Matah',
-            'img' => '',
+            'img' => 'images\foods\chicken-sambal-matah.jpeg',
             'old_price' => '65000',
             'new_price' => '65000'
         ]);
@@ -112,7 +112,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Grilled Chicken Sandwich',
-            'img' => '',
+            'img' => 'images\foods\grilled-chicken-sandwich.jpeg',
             'old_price' => '55000',
             'new_price' => '55000'
         ]);
@@ -120,7 +120,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Smokey Toasty',
-            'img' => '',
+            'img' => 'images\foods\smokey-toasty.jpeg',
             'old_price' => '60000',
             'new_price' => '60000'
         ]);
@@ -128,7 +128,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Pepperoni Cheese Bagel',
-            'img' => '',
+            'img' => 'images\foods\pepperoni-cheese-bagel.jpeg',
             'old_price' => '55000',
             'new_price' => '55000'
         ]);
@@ -136,7 +136,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'EBC Beef Burger',
-            'img' => '',
+            'img' => 'images\foods\ebc-beef-burger.jpeg',
             'old_price' => '65000',
             'new_price' => '65000'
         ]);
@@ -144,7 +144,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Bread Vanilla Puding',
-            'img' => '',
+            'img' => 'images\foods\bread-vanilla-puding.jpeg',
             'old_price' => '35000',
             'new_price' => '35000'
         ]);
@@ -152,7 +152,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Grilled Cheese Banana',
-            'img' => '',
+            'img' => 'images\foods\grilled-cheese-banana.jpeg',
             'old_price' => '38000',
             'new_price' => '38000'
         ]);
@@ -160,7 +160,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 1,
             'name' => 'Espresso Brownie with Ice Cream',
-            'img' => '',
+            'img' => 'images\foods\espresso-brownie-with-ice-cream.jpeg',
             'old_price' => '30000',
             'new_price' => '30000'
         ]);
@@ -184,7 +184,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Hot Cappuccino',
-            'img' => '',
+            'img' => 'images\espresso-base\ice-cappucino.jpeg',
             'old_price' => '42000',
             'new_price' => '42000'
         ]);
@@ -192,7 +192,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Ice Cappucino',
-            'img' => '',
+            'img' => 'images\espresso-base\ice-cappucino.jpeg',
             'old_price' => '45000',
             'new_price' => '45000'
         ]);
@@ -200,7 +200,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Hot Cafe Latte',
-            'img' => '',
+            'img' => 'images\espresso-base\cafe-latte.jpeg',
             'old_price' => '42000',
             'new_price' => '42000'
         ]);
@@ -208,7 +208,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Ice Cafe Latte',
-            'img' => '',
+            'img' => 'images\espresso-base\cafe-latte.jpeg',
             'old_price' => '47000',
             'new_price' => '47000'
         ]);
@@ -216,7 +216,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Hot Cafe Mocha',
-            'img' => '',
+            'img' => 'images\espresso-base\cafe-mocha.jpeg',
             'old_price' => '45000',
             'new_price' => '45000'
         ]);
@@ -224,7 +224,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Ice Cafe Mocha',
-            'img' => '',
+            'img' => 'images\espresso-base\cafe-mocha.jpeg',
             'old_price' => '45000',
             'new_price' => '45000'
         ]);
@@ -288,7 +288,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 2,
             'name' => 'Marochino',
-            'img' => '',
+            'img' => 'images\espresso-base\marochino.jpeg',
             'old_price' => '43000',
             'new_price' => '43000'
         ]);
@@ -352,7 +352,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 4,
             'name' => 'Es Kopi Karamel',
-            'img' => '',
+            'img' => 'images\local-taste\es-kopi-karamel.jpeg',
             'old_price' => '38000',
             'new_price' => '38000'
         ]);
@@ -360,7 +360,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 4,
             'name' => 'Es Kopi Batur',
-            'img' => '',
+            'img' => 'images\local-taste\es-kopi-batur.jpeg',
             'old_price' => '38000',
             'new_price' => '38000'
         ]);
@@ -368,7 +368,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 5,
             'name' => 'Dalgona Sweetie Marie',
-            'img' => '',
+            'img' => 'images\millennial-signature\dalgona-sweetie-marie.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -376,7 +376,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 5,
             'name' => 'Dalgona Oreo Topping',
-            'img' => '',
+            'img' => 'images\millennial-signature\dalgona-oreo-topping.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -384,7 +384,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 5,
             'name' => 'Dalgona Coffee Jelly',
-            'img' => '',
+            'img' => 'images\millennial-signature\dalgona-coffee-jelly.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -400,7 +400,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Green Tea Jasmine',
-            'img' => '',
+            'img' => 'images\non-coffee\green-tea-jasmine.jpeg',
             'old_price' => '35000',
             'new_price' => '35000'
         ]);
@@ -448,7 +448,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Strawberry Milkshake',
-            'img' => '',
+            'img' => 'images\non-coffee\strawberry-milkshake.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -456,7 +456,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Blueberry Milkshake',
-            'img' => '',
+            'img' => 'images\non-coffee\blueberry-milkshake.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -464,7 +464,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Oreo Milkshake',
-            'img' => '',
+            'img' => 'images\non-coffee\oreo-milkshake.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -488,7 +488,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Hot Marshmallow Vanila Latte',
-            'img' => '',
+            'img' => 'images\non-coffee\marshmallow-vanila-latte.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -496,7 +496,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Ice Marshmallow Vanila Latte',
-            'img' => '',
+            'img' => 'images\non-coffee\marshmallow-vanila-latte.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
@@ -504,7 +504,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'category_id' => 6,
             'name' => 'Mango Smoothies',
-            'img' => '',
+            'img' => 'images\non-coffee\mango-smoothies.jpeg',
             'old_price' => '40000',
             'new_price' => '40000'
         ]);
