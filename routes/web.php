@@ -23,5 +23,5 @@ Route::get('logout-test', 'HomeController@home');
 Route::get('home', 'HomeController@index')->name('home');
 Route::post('order', 'HomeController@order')->name('order');
 Route::post('payment', 'HomeController@payment')->name('payment');
-Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
-Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
+Route::get('auth/redirect/{provider}', 'Auth\SocialController@redirect');
+Route::get('auth/callback/{provider}', 'Auth\SocialController@callback');

@@ -8,9 +8,17 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-lg btn-success btn-block">
-                        <strong>Login With Google</strong>
-                    </a> 
+                    <div class="form-group row mb-0 mx-0">
+                        <div class="col-md-4">
+                            <a href="{{ url('/auth/redirect/google') }}" class="btn btn-light btn-block"><i class="fab fa-google"></i> Google</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-light btn-block"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url('/auth/redirect/twitter') }}" class="btn btn-light btn-block"><i class="fab fa-twitter"></i> Twitter</a>
+                        </div>
+                    </div>
                     {{-- <form method="POST" action="{{ route('login') }}">
                         @csrf
 
