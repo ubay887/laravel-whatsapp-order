@@ -96,41 +96,6 @@
                                     </div>
                                     <hr>
                                     <div class="card-content">
-                                        {{-- <div class="produk mb-0">
-                                            @foreach ($menu as $item)
-                                                <div class="list">
-                                                    <div class="row">
-                                                        <div class="col-3">
-                                                            <div class="product-image">
-                                                                @isset($item->img)
-                                                                    <img src="{{ asset($item->img) }}" alt="element 04" class="img-fluid">
-                                                                @else
-                                                                    <img src="{{ asset('images/logo/logo.jpg') }}" alt="element 04" class="img-fluid">
-                                                                @endisset
-
-                                                                @isset ($item->flag_id)
-                                                                    <div class="float-left">
-                                                                        <span class="badge badge-primary position-absolute">{{ $item->flag_id }}</span>
-                                                                    </div>
-                                                                @endisset
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-9">
-                                                            <h4 class="mb-0 font-weight-bold">{{ $item->name }}</h4>
-                                                            @if ($item->old_price == $item->new_price)    
-                                                                <p>Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
-                                                            @else
-                                                                <p><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
-                                                            @endif
-                                                            <div class="float-right input{{ $item->id }}">
-                                                                <button class="btn btn-success beli" data-value="{{ $item->id }}">Beli</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <hr>
-                                                </div>
-                                            @endforeach
-                                        </div> --}}
                                         <div class="row data">
                                             @foreach ($menu as $item)
                                                 <div class="col-6 list">
@@ -200,6 +165,48 @@
             {{-- <p>Footer</p> --}}
         </footer>
     </form>
+
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal">Pencet</button>
+
+    <div class="modal fade text-left" id="modal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content modal-xs">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel1">Bayar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="#" novalidate>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="controls">
+                                <label>TOTAL: </label>
+                                <h2 class="ml-1 float-right">Rp. 999.999</h2>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="controls">
+                                <label>Cash: </label>
+                                <input type="number" required class="form-control" data-validation-required-message="Tidak boleh kosong">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="controls">
+                                <label>Kembali: </label>
+                                <input type="text" disabled class="form-control" data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="Uang kurang.">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Bayar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('js')
