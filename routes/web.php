@@ -17,11 +17,11 @@ Auth::routes(['register' => false]);
 
 Route::get('logout-test', 'HomeController@home');
 Route::get('', 'HomeController@index')->name('home');
-Route::post('order', 'HomeController@order')->name('order');
-Route::post('payment', 'HomeController@payment')->name('payment');
+Route::post('order', 'OrderController@order')->name('order');
+Route::post('payment', 'OrderController@payment')->name('payment');
 Route::get('auth/redirect/{provider}', 'Auth\SocialController@redirect');
 Route::get('auth/callback/{provider}', 'Auth\SocialController@callback');
-Route::get('logout', 'HomeController@logout');
+Route::get('logout', 'HomeController@logout')->name('logout');
 
 Route::get('home', function () {
     return redirect('/');

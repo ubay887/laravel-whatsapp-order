@@ -14,22 +14,23 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendors/css/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/animate/animate.css') }}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="/css/components.css">
-    <link rel="stylesheet" type="text/css" href="/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-extended.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/colors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/components.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/themes/dark-layout.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/themes/semi-dark-layout.css') }}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="/css/plugins/forms/validation/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/forms/validation/form-validation.css') }}">
     <!-- END: Page CSS-->
 
     <style>
@@ -54,23 +55,24 @@
     <div class="drag-target"></div>
 
     <!-- BEGIN: Vendor JS-->
-    <script src="/vendors/js/vendors.min.js"></script>
+    <script src="{{ asset('vendors/js/vendors.min.js') }}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="/vendors/js/forms/validation/jqBootstrapValidation.js"></script>
-    <script src="/vendors/js/extensions/sweetalert2.all.min.js"></script>
-    <script src="/vendors/js/extensions/polyfill.min.js"></script>
+    <script src="{{ asset('vendors/js/forms/validation/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('vendors/js/extensions/sweetalert2.all.min.js') }}"></script>
+    <script src="{{ asset('vendors/js/extensions/polyfill.min.js') }}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="/js/core/app-menu.js"></script>
-    <script src="/js/core/app.js"></script>
-    <script src="/js/scripts/components.js"></script>
+    <script src="{{ asset('js/core/app-menu.js') }}"></script>
+    <script src="{{ asset('js/core/app.js') }}"></script>
+    <script src="{{ asset('js/scripts/components.js') }}"></script>
+    <script src="{{ asset('js/fontawesome.js') }}"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="/js/scripts/forms/validation/form-validation.js"></script>
+    <script src="{{ asset('js/scripts/forms/validation/form-validation.js') }}"></script>
     <!-- END: Page JS-->
 
     @yield('js')
