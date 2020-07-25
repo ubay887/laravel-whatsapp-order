@@ -43,6 +43,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function providers()
+    {
+        return $this->hasMany(SocialProvider::class);
+    }
+
     /**
      * @param string|array $roles
      */
