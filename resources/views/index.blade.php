@@ -11,15 +11,18 @@
                 <div class="col-md-10 content-header-left">
                     <h2 class="content-header-title">
                     <img src="{{ asset('images/logo/logo.jpg') }}" style="height: 60px" alt="eco BIKe coffee">
-                    {{-- <div class="float-right">
-                        <div class="breadcrumb-wrapper col-12 text-center d-none d-sm-block my-1">
-                        <ol class="breadcrumb align-items-center">
-                            <li class="breadcrumb-item"><a href="/">Beranda</a>
-                            </li>
-                            <li class="breadcrumb-item"><a href="/kegiatan">Kegiatan</a>
-                            </li>
-                        </ol>
-                        </div> --}}
+                    <div class="float-right">
+                        <div class="breadcrumb-wrapper col-12 text-center my-1">
+                            <ol class="breadcrumb align-items-center">
+                                @auth
+                                    <li class="breadcrumb-item"><a href="/logout">Logout</a>
+                                    </li>
+                                @else
+                                    <li class="breadcrumb-item"><a href="/login">Login</a>
+                                    </li>
+                                @endauth
+                            </ol>
+                        </div>
                     </div>
                     </h2>
                 </div>              
@@ -122,7 +125,11 @@
                     <p class="m-0 font-weight-bold text-danger">Rp.100.000</p>
                 </div> --}}
                 <div class="float-right">
-                    <button type="submit" class="btn btn-success">Lanjut</button>
+                    @auth
+                        <button type="submit" class="btn btn-success">Lanjut</button>
+                    @else
+                        <a href="/login" class="btn btn-success">Login</a>
+                    @endauth
                 </div>
             </div>
             {{-- <p>Footer</p> --}}
@@ -145,15 +152,6 @@
           $(".input"+ id).html(`<div class="col">
           <input type="number" class="form-control text-center" name="menu[`+ id +`]" value="1" minlength="1" min="1" max="99" placeholder="0">
           </div>`);
-      });
-
-      $("#produk").keyup(function() {
-          var value = $(this).val();
-          console.log($(this).val());
-          // $(".data").filter(function() {
-          //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-          // });
-          // $('.produk').find('.list .row .col-9 h4:not(:contains("'+value+'"))');
       });
     });
   </script>

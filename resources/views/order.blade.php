@@ -9,16 +9,19 @@
               <div class="col-md-10 content-header-left">
                 <h2 class="content-header-title">
                   <img src="{{ asset('images/logo/logo.jpg') }}" style="height: 60px" alt="HIMA-TI STIKI Indonesia">
-                  {{-- <div class="float-right">
-                    <div class="breadcrumb-wrapper col-12 text-center d-none d-sm-block my-1">
-                      <ol class="breadcrumb align-items-center">
-                          <li class="breadcrumb-item"><a href="/">Beranda</a>
-                          </li>
-                          <li class="breadcrumb-item"><a href="/kegiatan">Kegiatan</a>
-                          </li>
-                      </ol>
-                    </div> --}}
-                  </div>
+                    <div class="float-right">
+                        <div class="breadcrumb-wrapper col-12 text-center my-1">
+                            <ol class="breadcrumb align-items-center">
+                                @auth
+                                    <li class="breadcrumb-item"><a href="/logout">Logout</a>
+                                    </li>
+                                @else
+                                    <li class="breadcrumb-item"><a href="/login">Login</a>
+                                    </li>
+                                @endauth
+                            </ol>
+                        </div>
+                    </div>
                 </h2>
               </div>              
             </div>
@@ -70,7 +73,6 @@
                                                     </div>
                                                     <hr>
                                                 @endforeach
-                                                <hr>
                                             </div>
                                         </div>
                                     </div>

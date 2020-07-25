@@ -114,6 +114,13 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('home');
+        return redirect('/');
+    }
+
+    public function logout () {
+        //logout user
+        auth()->logout();
+        // redirect to homepage
+        return redirect('/');
     }
 }

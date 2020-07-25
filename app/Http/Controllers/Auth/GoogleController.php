@@ -53,7 +53,7 @@ class GoogleController extends Controller
     
                 Auth::login($newUser);
      
-                return redirect('/home');
+                return redirect('/');
             }
     
         } catch (Exception $e) {
