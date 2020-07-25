@@ -15,10 +15,13 @@
                         <div class="breadcrumb-wrapper col-12 text-center my-1">
                             <ol class="breadcrumb align-items-center">
                                 @auth
-                                    <li class="breadcrumb-item"><a href="/logout">Logout</a>
+                                    <li class="breadcrumb-item"><a href="{{ route('logout') }}"> Logout</a>
                                     </li>
                                 @else
-                                    <li class="breadcrumb-item"><a href="/login">Login</a>
+                                    <li class="breadcrumb-item">
+                                        {{-- <button type="button"  --}}
+                                            <a href="#" data-toggle="modal" data-target="#modal">Masuk</a>
+                                        {{-- </button> --}}
                                     </li>
                                 @endauth
                             </ol>
@@ -126,7 +129,11 @@
                                                                     <p class="card-text"><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
                                                                 @endif
                                                                 <div class="float-right input{{ $item->id }}">
-                                                                    <button class="btn btn-success beli" data-value="{{ $item->id }}">Beli</button>
+                                                                    @auth
+                                                                        <button class="btn btn-success beli" data-value="{{ $item->id }}">Beli</button>
+                                                                    @else
+                                                                        <button type="button" class="btn btn-success beli" data-toggle="modal" data-target="#modal">Beli</button>
+                                                                    @endauth
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -148,62 +155,49 @@
         </div>
         <!-- END: Content-->
 
-        <footer class="footer footer-static footer-light ml-0 py-1">
-            <div class="container">
-                {{-- <div class="float-left">
-                    <p class="m-0">Total Belanja:</p>
-                    <p class="m-0 font-weight-bold text-danger">Rp.100.000</p>
-                </div> --}}
-                <div class="float-right">
-                    @auth
-                        <button type="submit" class="btn btn-success">Lanjut</button>
-                    @else
-                        <a href="/login" class="btn btn-success">Login</a>
-                    @endauth
+        @auth
+            <footer class="footer footer-static footer-light ml-0 py-1">
+                <div class="container">
+                    {{-- <div class="float-left">
+                        <p class="m-0">Total Belanja:</p>
+                        <p class="m-0 font-weight-bold text-danger">Rp.100.000</p>
+                    </div> --}}
+                    <div class="float-right">
+                        @auth
+                            <button type="submit" class="btn btn-success">Lanjut</button>
+                        @else
+                            <a href="{{ route('login') }}" class="btn btn-success">Masuk</a>
+                        @endauth
+                    </div>
                 </div>
-            </div>
-            {{-- <p>Footer</p> --}}
-        </footer>
+                {{-- <p>Footer</p> --}}
+            </footer>
+        @endauth
     </form>
-
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal">Pencet</button>
 
     <div class="modal fade text-left" id="modal" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content modal-xs">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel1">Bayar</h4>
+                    <h4 class="modal-title" id="myModalLabel1">Masuk</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="#" novalidate>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="controls">
-                                <label>TOTAL: </label>
-                                <h2 class="ml-1 float-right">Rp. 999.999</h2>
-                            </div>
+                <div class="modal-body">
+                    <div class="form-group row mb-0 mx-0">
+                        <div class="col-md-12 mb-2">
+                            <a href="{{ url('/auth/redirect/google') }}" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Google</a>
                         </div>
-                        <div class="form-group">
-                            <div class="controls">
-                                <label>Cash: </label>
-                                <input type="number" required class="form-control" data-validation-required-message="Tidak boleh kosong">
-                            </div>
+                        <div class="col-md-12 mb-2">
+                            <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary btn-block"><i class="fab fa-facebook"></i> Facebook</a>
                         </div>
-                        <div class="form-group">
-                            <div class="controls">
-                                <label>Kembali: </label>
-                                <input type="text" disabled class="form-control" data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="Uang kurang.">
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Bayar</button>
-                        </div>
+                        {{-- <div class="col-md-12">
+                            <a href="{{ url('/auth/redirect/twitter') }}" class="btn btn-light btn-block"><i class="fab fa-twitter"></i> Twitter</a>
+                        </div> --}}
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
