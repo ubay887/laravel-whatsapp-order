@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Menu;
 use App\User;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -29,8 +30,9 @@ class HomeController extends Controller
     public function index()
     {
         $menu = Menu::all();
+        $kategori = Category::all();
 
-        return view('index', compact('menu'));
+        return view('index', compact('menu', 'kategori'));
     }
 
     public function order(Request $request)

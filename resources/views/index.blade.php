@@ -61,48 +61,113 @@
 
                                 {{-- <input type="text" class="form-control mt-2" id="produk" placeholder="Pencarian Produk"> --}}
                                 
-                                <div class="card mt-2">
+                                <div class="row mt-1">
+                                    @foreach ($kategori as $item)
+                                        <div class="col-6 col-sm-4 mb-1">
+                                            <div class="card m-0">
+                                                <div class="card-content">
+                                                    <img class="card-img img-responsive" src="/images/non-coffee/mango-smoothies.jpeg" style="width: 100%; height: 50px;" alt="Card image">
+                                                    <div class="card-img-overlay overflow-hidden overlay-danger overlay-lighten-2">
+                                                        {{-- <h4 class="card-title text-white">Card Image Overlay</h4> --}}
+                                                        <div class="row justify-content-center">
+                                                            <button type="button" style="padding: 0; border: none; background: none;"><p class="card-text text-white text-center kategori" data-value="{{ $item->id }}">{{ $item->name }}</p></button>
+                                                        </div>
+                                                        {{-- <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p> --}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <div class="form-group m-0">
+                                                <input type="text" class="form-control" id="pencarian" placeholder="Pencarian Menu">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Semua Produk</h4>
                                     </div>
                                     <hr>
                                     <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="produk mb-0">
-                                                @foreach ($menu as $item)
-                                                    <div class="list">
-                                                        <div class="row">
-                                                            <div class="col-3">
-                                                                <div class="product-image">
-                                                                    @isset($item->img)
-                                                                        <img src="{{ asset($item->img) }}" alt="element 04" class="img-fluid">
-                                                                    @else
-                                                                        <img src="{{ asset('images/logo/logo.jpg') }}" alt="element 04" class="img-fluid">
-                                                                    @endisset
-
-                                                                    @isset ($item->flag_id)
-                                                                        <div class="float-left">
-                                                                            <span class="badge badge-primary position-absolute">{{ $item->flag_id }}</span>
-                                                                        </div>
-                                                                    @endisset
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-9">
-                                                                <h4 class="mb-0 font-weight-bold">{{ $item->name }}</h4>
-                                                                @if ($item->old_price == $item->new_price)    
-                                                                    <p>Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                        {{-- <div class="produk mb-0">
+                                            @foreach ($menu as $item)
+                                                <div class="list">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="product-image">
+                                                                @isset($item->img)
+                                                                    <img src="{{ asset($item->img) }}" alt="element 04" class="img-fluid">
                                                                 @else
-                                                                    <p><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                                                    <img src="{{ asset('images/logo/logo.jpg') }}" alt="element 04" class="img-fluid">
+                                                                @endisset
+
+                                                                @isset ($item->flag_id)
+                                                                    <div class="float-left">
+                                                                        <span class="badge badge-primary position-absolute">{{ $item->flag_id }}</span>
+                                                                    </div>
+                                                                @endisset
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h4 class="mb-0 font-weight-bold">{{ $item->name }}</h4>
+                                                            @if ($item->old_price == $item->new_price)    
+                                                                <p>Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                                            @else
+                                                                <p><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                                            @endif
+                                                            <div class="float-right input{{ $item->id }}">
+                                                                <button class="btn btn-success beli" data-value="{{ $item->id }}">Beli</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <hr>
+                                                </div>
+                                            @endforeach
+                                        </div> --}}
+                                        <div class="row data">
+                                            @foreach ($menu as $item)
+                                                <div class="col-6 list">
+                                                    <div class="card mx-1">
+                                                        <div class="card-header p-0">
+                                                            <p class="font-weight-bold">{{ $item->name }}</p>
+                                                            <h5 class="font-weight-bold" hidden>{{ strtolower($item->name) }}</h5>
+                                                            <h6 hidden>{{ $item->category_id }}</h6>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <div >
+                                                                @isset($item->img)
+                                                                    <img src="{{ asset($item->img) }}" alt="{{ $item->name }}" class="img-fluid rounded mx-auto d-block">
+                                                                @else
+                                                                    <img src="{{ asset('images/logo/logo.jpg') }}" alt="Logo" class="img-fluid rounded mx-auto d-block">
+                                                                @endisset
+
+                                                                @isset ($item->flag_id)
+                                                                    <div class="float-left">
+                                                                        <span class="badge badge-primary position-absolute">{{ $item->flag_id }}</span>
+                                                                    </div>
+                                                                @endisset
+                                                            </div>
+                                                            <div class="card-body p-0 mt-1">
+                                                                @if ($item->old_price == $item->new_price)    
+                                                                    <p class="card-text">Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                                                @else
+                                                                    <p class="card-text"><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
                                                                 @endif
                                                                 <div class="float-right input{{ $item->id }}">
                                                                     <button class="btn btn-success beli" data-value="{{ $item->id }}">Beli</button>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    <hr>
                                                     </div>
-                                                @endforeach
-                                            </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="card-footer text-center">
                                             <a href="#" id="loadMore">Load More</a>
@@ -140,7 +205,7 @@
 @section('js')
 <script>
     $(document).ready( function () {
-      $('.list').slice(3, 99).hide();
+      $('.list').slice(4, 99).hide();
       $("#loadMore").on("click", function(e){
           e.preventDefault();
           $(".list:hidden").slideDown();
@@ -153,6 +218,22 @@
           <input type="number" class="form-control text-center" name="menu[`+ id +`]" value="1" minlength="1" min="1" max="99" placeholder="0">
           </div>`);
       });
+
+      $(".kategori").on("click", function() {
+            $('.col-6').removeClass('d-none');
+            var id = $(this).attr('data-value');
+            console.log(id);
+            $('.data').find('.col-6 .card .card-header h6:not(:contains("'+id+'"))').parent().parent().parent().addClass('d-none');
+      });
+
+      $("#pencarian").keyup(function() {
+            $('.list').show();
+            $(".card-footer").remove();
+            $('.col-6').removeClass('d-none');
+            var filter = $(this).val().toLowerCase();
+            console.log(filter);
+            $('.data').find('.col-6 .card .card-header h5:not(:contains("'+filter+'"))').parent().parent().parent().addClass('d-none');
+      });      
     });
   </script>
 @endsection
