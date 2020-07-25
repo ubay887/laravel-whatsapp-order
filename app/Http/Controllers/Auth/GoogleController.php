@@ -48,11 +48,10 @@ class GoogleController extends Controller
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'password' => Hash::make('123456dummy')
-                ])
-                    ->roles()
-                    ->attach(Role::where('name', 'user')->first());
+                ]);
+                $newUser->roles()->attach(Role::where('name', 'user')->first());
     
-                // Auth::login($newUser);
+                Auth::login($newUser);
      
                 return redirect('/home');
             }
