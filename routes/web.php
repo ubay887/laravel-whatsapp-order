@@ -26,3 +26,5 @@ Route::get('logout', 'HomeController@logout')->name('logout');
 Route::get('home', function () {
     return redirect('/');
 });
+
+Route::view('/admin', 'admin.produk');

@@ -221,6 +221,8 @@
       });
 
       $(".kategori").on("click", function() {
+            $('.list').show();
+            $(".card-footer").remove();
             $('.col-6').removeClass('d-none');
             var id = $(this).attr('data-value');
             console.log(id);
