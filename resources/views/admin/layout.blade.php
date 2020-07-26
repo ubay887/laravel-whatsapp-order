@@ -9,9 +9,9 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>@yield('title') - Suarti UMKM - Kopi Di Desa</title>
-    <link rel="apple-touch-icon" href="{{ asset('/app-assets/images/ico/apple-icon-120.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/app-assets/images/ico/favicon.ico') }}">
+    <title>@yield('title') - eco BIKe coffee</title>
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/logo.jpg') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo/logo.jpg') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -29,7 +29,7 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/style.css') }}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome.css') }}">
     <!-- END: Custom CSS-->
 
     @yield('css')
@@ -50,11 +50,11 @@
                 <div class="navbar-collapse" id="navbar-mobile">
                     <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center"></div>
                     <ul class="nav navbar-nav float-right">
-                        <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
+                        <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="fa fa-window-maximize" aria-hidden="true"></i></a></li>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">Kasir 1</span><span class="user-status">Outlet Resto</span></div><span><div class="avatar bg-primary mr-1">
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">Admin</span><span class="user-status">Outlet Cafe</span></div><span><div class="avatar bg-primary mr-1">
                                     <div class="avatar-content">
-                                      K
+                                      A
                                     </div>
                                   </div></span>
                             </a>
@@ -79,10 +79,9 @@
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto"><a class="navbar-brand" href="#">
-                        <div class="brand-logo"></div>
-                        <h2 class="brand-text mb-0">Vuexy</h2>
-                    </a></li>
-                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block primary" data-ticon="icon-disc"></i></a></li>
+                    <div class="brand-logo"></div>
+                    <h2 class="brand-text mb-0">Kopi</h2>
+                </a></li>
             </ul>
         </div>
         <div class="shadow-bottom"></div>
@@ -123,6 +122,7 @@
     <script src="{{ asset('js/core/app-menu.js') }}"></script>
     <script src="{{ asset('js/core/app.js') }}"></script>
     <script src="{{ asset('js/scripts/components.js') }}"></script>
+    <script src="{{ asset('js/fontawesome.js') }}"></script>
     <!-- END: Theme JS-->
 
     @yield('js')

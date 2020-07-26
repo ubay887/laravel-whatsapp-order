@@ -3709,7 +3709,7 @@ _:-ms-lang(x),
 }
 
 .pagination .page-item.next-item .page-link:after {
-  content: "\E844";
+  content: "<i class="fa fa-trash-alt" aria-hidden="true">";
   font-family: "feather";
 }
 
@@ -3720,12 +3720,12 @@ _:-ms-lang(x),
 
 .pagination .page-item.prev .page-link:before,
 .pagination .page-item.previous .page-link:before {
-  content: "\E843";
+  content: "<i class="fa fa-trash-alt" aria-hidden="true">";
   font-family: "feather";
 }
 
 .pagination .page-item.next .page-link:after {
-  content: "\E844";
+  content: "<i class="fa fa-trash-alt" aria-hidden="true">";
   font-family: "feather";
 }
 

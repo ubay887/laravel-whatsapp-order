@@ -6,10 +6,10 @@
     active
 @endsection
 @section('title')
-    Penjualan
+    Admin
 @endsection
 @section('judul')
-    Penjualan
+    Produk
 @endsection
 @section('content')
     {{-- Tabel Penjualan --}}
@@ -41,7 +41,7 @@
                                             <td>Featured</td>
                                             <td>Rp. 10.000</td>
                                             <td>Rp. 10.000</td>
-                                            <td><button type="button" style="padding: 0; border: none; background: none;" class="action-edit text-primary" title="Lihat Penjualan"><i class="feather icon-eye"></i></span></td>
+                                            <td><button type="button" style="padding: 0; border: none; background: none;" class="action-edit text-danger" title="Lihat Penjualan"><i class="fa fa-trash-alt" aria-hidden="true"></i></span></td>
                                         </tr>
                                         {{-- @foreach ($penjualan as $item)
                                             <tr>
