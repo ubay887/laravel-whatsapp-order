@@ -87,7 +87,7 @@
                                     <div class="card-content">
                                         <div class="card-body">
                                             <div class="form-group m-0">
-                                                <input type="text" class="form-control" id="pencarian" placeholder="Pencarian Menu">
+												<input type="text" class="form-control" id="pencarian" placeholder="Pencarian Menu">
                                             </div>
                                         </div>
                                     </div>
@@ -99,21 +99,16 @@
                                     </div>
                                     <hr>
                                     <div class="card-content">
-                                        <div class="row data">
+                                        <div class="data mx-1">
                                             @foreach ($menu as $item)
-                                                <div class="col-6 list">
-                                                    <div class="card mx-1">
-                                                        <div class="card-header p-0">
-                                                            <p class="font-weight-bold">{{ $item->name }}</p>
-                                                            <h5 class="font-weight-bold" hidden>{{ strtolower($item->name) }}</h5>
-                                                            <h6 hidden>{{ $item->category_id }}</h6>
-                                                        </div>
-                                                        <div class="card-content">
-                                                            <div >
+                                                <div class="list">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="product-image">
                                                                 @isset($item->img)
-                                                                    <img src="{{ asset($item->img) }}" alt="{{ $item->name }}" class="img-fluid rounded mx-auto d-block">
+                                                                    <img src="{{ asset($item->img) }}" alt="element 04" class="img-fluid">
                                                                 @else
-                                                                    <img src="{{ asset('images/logo/logo.jpg') }}" alt="Logo" class="img-fluid rounded mx-auto d-block">
+                                                                    <img src="{{ asset('images/logo/logo.jpg') }}" alt="element 04" class="img-fluid">
                                                                 @endisset
 
                                                                 @isset ($item->flag_id)
@@ -122,22 +117,28 @@
                                                                     </div>
                                                                 @endisset
                                                             </div>
-                                                            <div class="card-body p-0 mt-1">
-                                                                @if ($item->old_price == $item->new_price)    
-                                                                    <p class="card-text">Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
-                                                                @else
-                                                                    <p class="card-text"><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
-                                                                @endif
-                                                                <div class="float-right input{{ $item->id }}">
-                                                                    @auth
-                                                                        <button class="btn btn-success beli" data-value="{{ $item->id }}">Beli</button>
-                                                                    @else
-                                                                        <button type="button" class="btn btn-success beli" data-toggle="modal" data-target="#modal">Beli</button>
-                                                                    @endauth
-                                                                </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <h4 class="mb-0 font-weight-bold">{{ $item->name }}</h4>
+                                                            <h5 hidden>{{ strtolower($item->name) }}</h4>
+                                                            <h6 hidden>{{ $item->category_id }}</h6>
+                                                            @if ($item->old_price == $item->new_price)    
+                                                                <p>Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                                            @else
+                                                                <p><del class="text-danger">Rp. {{ number_format($item->old_price, 0, ',', '.') }}</del> Rp. {{ number_format($item->new_price, 0, ',', '.') }}</p>
+                                                            @endif
+                                                            <div class="float-right input{{ $item->id }}">
+                                                                <div class="row">
+																	<button type="button" class="btn btn-danger px-1 qtyminus" data-value="menu{{ $item->id }}">-</button>
+																	<div class="col-4 px-0">
+																		<input type="number" class="form-control text-center" name="menu{{ $item->id }}" value="0" minlength="1" min="0" max="99" placeholder="0">
+																	</div>
+																	<button type="button" class="btn btn-success px-1 qtyplus" data-value="menu{{ $item->id }}">+</button>
+																</div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                <hr>
                                                 </div>
                                             @endforeach
                                         </div>
@@ -213,12 +214,12 @@
           $(".card-footer").remove();
       });
 
-      $(".beli").on( "click", function() {
-          var id = $(this).attr('data-value');
-          $(".input"+ id).html(`<div class="col">
-          <input type="number" class="form-control text-center" name="menu[`+ id +`]" value="1" minlength="1" min="1" max="99" placeholder="0">
-          </div>`);
-      });
+    //   $(".beli").on( "click", function() {
+    //       var id = $(this).attr('data-value');
+    //       $(".input"+ id).html(`<div class="row">
+    //       <button type="button" class="btn btn-danger px-1 qtyminus" data-value="menu[`+ id +`]">-</button><div class="col-4 px-0"><input type="number" class="form-control text-center" name="menu[`+ id +`]" value="1" minlength="1" min="0" max="99" placeholder="0"></div><button type="button" class="btn btn-success px-1 qtyplus" data-value="menu[`+ id +`]">+</button>
+    //       </div>`);
+    //   });
 
       $(".kategori").on("click", function() {
             $('.list').show();
@@ -226,17 +227,53 @@
             $('.col-6').removeClass('d-none');
             var id = $(this).attr('data-value');
             console.log(id);
-            $('.data').find('.col-6 .card .card-header h6:not(:contains("'+id+'"))').parent().parent().parent().addClass('d-none');
+            $('.data').find('.list .row .col-9 h6:not(:contains("'+id+'"))').parent().parent().parent().addClass('d-none');
       });
 
       $("#pencarian").keyup(function() {
             $('.list').show();
             $(".card-footer").remove();
-            $('.col-6').removeClass('d-none');
+            $('.list').removeClass('d-none');
             var filter = $(this).val().toLowerCase();
             console.log(filter);
-            $('.data').find('.col-6 .card .card-header h5:not(:contains("'+filter+'"))').parent().parent().parent().addClass('d-none');
-      });      
+            $('.data').find('.list .row .col-9 h5:not(:contains("'+filter+'"))').parent().parent().parent().addClass('d-none');
+      });
+      
+      	$('.qtyplus').click(function(){
+			console.log("currentVal");
+			// Get the field name
+			fieldName = $(this).attr('data-value');
+			// Get its current value
+			var currentVal = parseInt($('input[name='+fieldName+']').val());
+			// If is not undefined
+			if (currentVal == 99) {
+				$('input[name='+fieldName+']').val(currentVal);
+			}
+			else if (!isNaN(currentVal) ) {
+				// Increment
+				$('input[name='+fieldName+']').val(currentVal + 1);
+			} 
+			else {
+				// Otherwise put a 0 there
+				$('input[name='+fieldName+']').val(0);
+			}
+		});
+		// This button will decrement the value till 0
+		$(".qtyminus").click(function() {
+			console.log("currentVal");
+			// Get the field name
+			fieldName = $(this).attr('data-value');
+			// Get its current value
+			var currentVal = parseInt($('input[name='+fieldName+']').val());
+			// If it isn't undefined or its greater than 0
+			if (!isNaN(currentVal) && currentVal > 0) {
+				// Decrement one
+				$('input[name='+fieldName+']').val(currentVal - 1);
+			} else {
+				// Otherwise put a 0 there
+				$('input[name='+fieldName+']').val(0);
+			}
+		});
     });
   </script>
 @endsection
